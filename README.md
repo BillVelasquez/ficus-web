@@ -124,18 +124,40 @@ Implementar un nuevo sistema suele implicar que se dupliquen el trabajo para los
 
 **Nuestra respuesta**
 
-- Implementación paralela 
+- Implementación en paralelo
+
+El proceso de implementación tiene un premisa : El Negocio nunca debe parar. Por eso nuestra implementación se hace en paralelo mientras sigue operando el actual sistema, de modo que la empresa puede contar siempre con al menos un sistema donde seguir ejecutando sus operaciones.
+
 - Estrategia Strangler Fig
+
+Queremos que el cambio sea transparente para el negocio y para los usuarios. En la implementación ponemos en práctica el patrón de migración de software [Strangler Fig](https://martinfowler.com/bliki/StranglerFigApplication.html) que se utiliza en toda la industria de software a nivel mundial, para garantizar la continuidad de los negocios, al tiempo se que reemplazan gradualmente los sistemas antiguos, sin sobresaltos ni interrupciones por funcionalidades defectuosas. 
+
 - Adición de valor para el usuario
+
+Nuestra estrategia para que el usuario esté dispuesto a pagar el precio del cambio es agregar valor a su trabajo diario, de modo que vea que el nuevo sistema facilita sus labores, en lugar de multiplicarlas.
 
 ### 3. Riesgos para el negocio
 
-- Sus dudas: 
+**Sus dudas:**
 
-    - ¿Y si no funciona el nuevo sistema?
-    - ¿Y si perdemos la funcionalidad que ya tenemos?
-    - ¿Y si resultan costos ocultos?
+- ¿Y si no funciona el nuevo sistema?
 
-- Nuestra respuesta
-    - Operación sin interrupciones
-    - Plan de Gestión de Riesgos Tecnológicos
+Todos hemos escuchado de proyectos de software que fracasan, y cuanto dinero se pierde cuando eso sucede. Y aunque la tecnología ha evolucionado y la experiencia de los implementadores también, la complejidad de los negocios y la mayor cantidad de sistemas interactuando ha crecido mucho más rápido, haciendo que los proyectos de software sean cada día más complejos y riesgosos.
+
+- ¿Y si perdemos la funcionalidad que ya tenemos?
+
+No siempre un nuevo software es mejor que el anterior. A veces precisamente por nuevo, no ha habido tiempo para agregarle todas las funcionalidades del anterior y finalmente los usuarios terminan haciendo manualmente las tareas que al antiguo software hacia por ellos.
+
+- ¿Y si resultan costos ocultos?
+
+Tampoco son desconocidos los proyectos que llegan a feliz término, pero luego de excederse en el tiempo y el presupuesto, ya qu epor la complejidad de las organizaciones, suelen ignorarse requerimientos cruciales al inicio, y luego incluirlos es más costoso que si se hubieran tenido en cuenta desde el comienzo.
+
+**Nuestra respuesta**
+
+- Operación sin interrupciones
+
+Durante la implementación de Ficus, aseguramos la operación del negocio, porque con nuestra estrategia de operación en paralelo, la empresa cuenta en todo momento, no con uno, sino con dos sistemas que respaldan sus operaciones y se integran automáticamente para evitar reprocesos.
+
+- Plan de Gestión de Riesgos Tecnológicos
+
+Como puede ver, somos conscientes de la naturaleza crítica de nuestra labor, por eso actuamos desde el principio guiados por un plan de gestión de riesgos tecnológicos, que hace conscientes a todos los involucrados de las situaciones de riesgo que debemos vigilar, prevenir y mitigar en todo momento, para reaccionar a tiempo y evitar que causen afectaciones a la implementación y al negocio.
