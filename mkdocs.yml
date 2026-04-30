@@ -1,0 +1,6 @@
+site_name: Ficus
+nav:
+  - Inicio: index.md
+  - Funcionalidad Preconstruida: features.md
+  - Personalización: unique.md
+theme: 'kpn'

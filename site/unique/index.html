@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>Personalización - Ficus</title>
+
+  <!-- Page description -->
+  
+
+  <!-- Redirect -->
+  
+
+  <!-- Page author -->
+  
+  <!--
+    Just add a favicon.ico image to the docs.
+  -->
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  <link rel="stylesheet" href="../css/colors.css">
+  <link rel="stylesheet" href="../css/bundle.css">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link media="print" onload="this.media='all'" rel="stylesheet" href="../css/atom-dark-one.min.css">
+  <!--
+    extra_ess contains paths to CSS files in the users
+    documentation directory or a list of CSS files defined in
+    their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_css
+  -->
+  
+
+  
+  
+
+  <!--
+    Include Google Analytics tracking code.
+
+    http://www.mkdocs.org/user-guide/configuration/#google_analytics
+  -->
+  
+
+</head>
+
+<body>
+<input id="dark-mode" type="checkbox" />
+<!--
+  The JS has to be loaded here for maximum performance, right after the #dark-mode
+-->
+<script src="../js/theme.js"></script>
+<div class="app-body">
+  <!-- KPN STYLE Beginning -->
+  <div class="app-layout ">
+    <!-- Top Bar -->
+    <nav class="app-layout__top-bar top-bar no-print">
+      <a class="top-bar__logo">
+        <img alt="KPN Logo" src="../img/logo-kpn.svg" />
+      </a>
+      <div class="top-bar__title no-print">Ficus</div>
+      <ul class="top-bar__menu no-print">
+        <!--
+          Create a search form that sends the user to the search.html file - this is
+          the other file in the template which adds search to the theme. The only
+          requirement here is that there is a text input with the name 'q' and the
+          action and methods match below.
+        -->
+          <li class="top-bar__item">
+
+            <span role="search" id="search-input-wrapper">
+              <form action="../search.html" method="get">
+                <input type="text" class="input" id="search-input" name="q" placeholder="Search..." />
+              </form>
+            </span >
+          </li>
+        <!--
+          Versioning support
+        -->
+        
+        <!--
+          Support repo URL
+        -->
+        <li class="top-bar__item">
+          
+
+        </li>
+        
+
+        <li class="top-bar__item">
+            <label class="top-bar__link" id="label-dark-mode" for="dark-mode" title="Dark mode">
+              <svg alt="dark mode" width="24" height="24">
+                <image xlink:href="../img/ui-bulb.svg" width="24" height="24"/>
+            </svg>
+            </label>
+        </li>
+        <li class="top-bar__item top-bar__item--trigger"></li>
+
+        <!-- <li class="top-bar__item">
+
+          <a class="top-bar__link top-bar__link--active">Home</a>
+        </li>
+        <li class="top-bar__item"><a class="top-bar__link">Information</a></li>
+        <li class="top-bar__item">
+          <a class="top-bar__link top-bar__link--collapsed">Getting Started</a>
+
+        </li>
+        <li class="top-bar__item top-bar__item--trigger">Menu</li> -->
+      </ul>
+    </nav>
+
+    <!--
+      Create the navigation for the documentation.
+
+      Because we don't know how many levels deep the navigation is, it needs to
+      be included in it's own file so it can be recursive. Otherwise the theme
+      can also only support a specific number of levels.
+
+      See the nav.html file for more details about how this works.
+    -->
+    <nav class="app-layout__side-bar side-bar no-print">
+      <div class="side-bar__action-bar">
+        <a class="side-bar__link" href="/">Ficus</a>
+        <!--
+          Versioning support
+        -->
+        
+        <button class="side-bar__close"></button>
+      </div>
+      <ul class="side-bar__menu">
+        
+          <!--
+
+-->
+
+<li>
+  <a href=".." class="side-bar__link ">
+    Inicio
+  </a>
+</li>
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../features/" class="side-bar__link ">
+    Funcionalidad Preconstruida
+  </a>
+</li>
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="./" class="side-bar__link side-bar__link--active">
+    Personalización
+  </a>
+</li>
+
+        
+      </ul>
+    </nav>
+
+    <!-- MAIN BLOCK -->
+    <main class="app-layout__main main">
+      <div class="app-layout__title-bar title-bar no-print">
+        <div class="title-bar__title">Personalización</div>
+      </div>
+      
+      <div class="sidebar--secondary hidden-s hidden-xs md-sidebar--secondary">
+        <h4>Table of contents</h4>
+        <ul>
+        
+          
+            <li><a class="a" href="#adaptacion-de-la-base-de-datos-para-usuarios-expertos">Adaptación de la base de datos para usuarios expertos</a></li>
+            
+          
+        
+          
+            <li><a class="a" href="#editor-de-procesos-de-negocio">Editor de Procesos de Negocio</a></li>
+            
+          
+        
+          
+            <li><a class="a" href="#generador-de-reportes-personalizados">Generador de Reportes Personalizados</a></li>
+            
+          
+        
+          
+            <li><a class="a" href="#complemento-de-excel-para-importacion-de-datos-y-generacion-de-reportes">Complemento de Excel para importación de datos y generación de reportes</a></li>
+            
+          
+        
+          
+            <li><a class="a" href="#bus-de-integracion-con-sistemas-de-terceros">BUS de Integración con sistemas de terceros</a></li>
+            
+          
+        
+          
+            <li><a class="a" href="#portal-de-autoservicio-para-clientes-y-proveedores">Portal de autoservicio para Clientes y Proveedores</a></li>
+            
+          
+        
+        </ul>
+      </div>
+      
+      <div class="container content-block">
+        <div class="kpn-style">
+          <div class="card">
+            <div class="card__body">
+
+              
+              <blockquote>
+<p>Lo que no va encontrar en otras soluciones</p>
+</blockquote>
+<h1 id="adaptacion-de-la-base-de-datos-para-usuarios-expertos">Adaptación de la base de datos para usuarios expertos</h1>
+<ul>
+<li>Diseñador de Tablas Maestras</li>
+<li>Diseñador de Formularios de registro de transacciones</li>
+<li>Archivos adjuntos en cualquier transacción</li>
+</ul>
+<h1 id="editor-de-procesos-de-negocio">Editor de Procesos de Negocio</h1>
+<ul>
+<li>Diseñador de Flujos de Trabajo y Asignación de tareas</li>
+<li>Asignación de permisos por Usuarios, Roles y Equipos</li>
+</ul>
+<h1 id="generador-de-reportes-personalizados">Generador de Reportes Personalizados</h1>
+<h1 id="complemento-de-excel-para-importacion-de-datos-y-generacion-de-reportes">Complemento de Excel para importación de datos y generación de reportes</h1>
+<ul>
+<li>Creación de datos Maestros desde Excel</li>
+<li>Funciones personalizadas en Excel para construir reportes automatizados</li>
+</ul>
+<h1 id="bus-de-integracion-con-sistemas-de-terceros">BUS de Integración con sistemas de terceros</h1>
+<ul>
+<li>Permite integrarse automáticamente con el actual sistema de la empresa y evitar migracones manuales</li>
+<li>Permite integrarse con otros sistemas internos o externos, en línea o en lotes</li>
+<li>Mecanismos de Integración mediante Servicios Web, Mensajería, Archivos de Interface o Conexión directa a la base de datos</li>
+</ul>
+<h1 id="portal-de-autoservicio-para-clientes-y-proveedores">Portal de autoservicio para Clientes y Proveedores</h1>
+<ul>
+<li>Permite que los mismos clientes o proveedores sean los que ingresen información al sistema</li>
+<li>Permite implementar página de autoservicio para que los clientes o proveedores puedan consultar por sí mismos en el sistema</li>
+</ul>
+<p>Con estas herramientas podemos construir en poco tiempo, cualquier otra funcionalidad propia de la empresa, como por ejemplo</p>
+<ul>
+<li>Importaciones / Exportaciones</li>
+<li>Gestión de Calidad</li>
+<li>Cotizaciones</li>
+<li>CRM</li>
+<li>Arrendamientos</li>
+<li>Planeación de la producción</li>
+</ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__body">
+        
+        <div class="row">
+          <div class="col col--s-4 col--m-3 col--l-2">
+          </div>
+          <div class="col col--s-4 col--m space-between">
+            
+              <a class="footer__link padding-top-0 navigation-prev"
+                href="../features/"
+                title="Funcionalidad Preconstruida">
+                &#8592; Previous Page
+              </a>
+            
+            
+            
+                Next Page &#8594;
+            
+          </div>
+          <div class="col col--s-4 col--m-3 ">
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+  </div>
+
+
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2026-04-30 20:38:07.755833+00:00
+  -->
+
+  <!--
+    To include static assets from our theme, just add
+    .. beforehand which will be the relative path to
+    the root of the documentation.
+  -->
+  <script src="../js/highlight.min.js"></script>
+  <script src="../js/languages/groovy.min.js"></script>
+  <script src="../js/languages/asciidoc.min.js"></script>
+  <script src="../js/languages/nix.min.js"></script>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script async src="../js/detail.js"></script>
+  <!--
+    extra_javascript contains paths to JavaScript files in the
+    users documentation directory or a list of JavaScript files
+    defined in their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_javascript
+  -->
+  
+    <script src="../search/main.js"></script>
+  
+
+
+  <script>
+  function getMermaidTheme() {
+    if (document.getElementById("dark-mode").checked) {
+      return 'dark'
+    }
+    return 'forest'
+  }
+
+  function initMermaid() {
+    mermaid.initialize({
+      theme: getMermaidTheme(),
+      logLevel: 1,
+    });
+  }
+  var mermaidClass = document.getElementsByClassName('mermaid');
+  if (mermaidClass.length > 0) {
+
+    var mermaidScript = document.createElement('script');
+    mermaidScript.setAttribute("src", "../js/mermaid.min.js");
+    mermaidScript.setAttribute("async", "false");
+    mermaidScript.setAttribute("type", "text/javascript");
+    mermaidScript.onload = initMermaid;
+    document.body.appendChild(mermaidScript)
+
+  }
+  </script>
+
+</div>
+</body>
+</html>
