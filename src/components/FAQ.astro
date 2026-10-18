@@ -1,0 +1,116 @@
+---
+import { getEntry } from 'astro:content';
+
+const faqEntry = await getEntry('sections', '08-objections-faq');
+
+const guarantees = [
+  {
+    category: "1. Costos e Inversión",
+    doubt: "Invertir un capital elevado en software sin saber si dará resultados rápidos.",
+    solution: "Período de prueba de concepto con datos reales y suscripción mensual fija sin cobros iniciales de licencia. Solo paga por lo que realmente utiliza.",
+    tag: "Cero Riesgo Financiero"
+  },
+  {
+    category: "2. Costo del Cambio",
+    doubt: "El caos de apagar el sistema actual, la resistencia del personal y la duplicidad de trabajo.",
+    solution: "Implementación en paralelo con patrón Strangler Fig: ambos sistemas conviven de forma sincronizada hasta que la transición esté 100% probada.",
+    tag: "Continuidad del Negocio"
+  },
+  {
+    category: "3. Riesgos Tecnológicos",
+    doubt: "Que el nuevo sistema falle en días críticos o que se pierdan funciones anteriores.",
+    solution: "Plan de Gestión de Riesgos Tecnológicos y doble respaldo operativo activo en todo momento para que la operación jamás se detenga.",
+    tag: "Operación Respaldada"
+  }
+];
+
+const faqs = [
+  {
+    q: "¿Por qué afirman que la implementación se realiza sin interrupciones?",
+    a: "Porque no realizamos cortes abruptos ('Big Bang'). Aplicamos la estrategia 'Strangler Fig', donde Ficus se conecta en paralelo con su software actual. Sus empleados pueden seguir facturando y operando en el sistema viejo mientras validamos cada módulo nuevo."
+  },
+  {
+    q: "¿Cómo funciona el complemento para Microsoft Excel?",
+    a: "Es un add-in oficial que se instala directamente en Excel. Permite vincular tablas de datos en tiempo real con Ficus mediante fórmulas seguras, facilitando el ingreso masivo y la creación de reportes financieros automáticos sin romper la trazabilidad ni saltarse permisos."
+  },
+  {
+    q: "¿Qué documentos electrónicos transmite directamente a la DIAN?",
+    a: "Ficus genera y envía Facturación Electrónica de Venta, Notas Débito y Crédito, Nómina Electrónica, Documento Soporte Electrónico y todos los eventos del ecosistema RADIAN, con documentos ilimitados y sin intermediarios que cobren por transacción."
+  },
+  {
+    q: "¿Es posible migrar datos de nuestro sistema contable actual?",
+    a: "Absolutamente. Contamos con herramientas de importación masiva asistida y conectores para extraer clientes, proveedores, saldos iniciales, kárdex de inventario y catálogos de cuentas de cualquier software contable del mercado."
+  },
+  {
+    q: "¿Qué incluye la suscripción mensual?",
+    a: "Incluye acceso completo a los módulos contratados, actualizaciones normativas y tributarias permanentes (DIAN / NIIF), alojamiento en nube de alta disponibilidad, copias de seguridad continuas y el soporte dedicado de un ejecutivo de cuenta humano."
+  }
+];
+---
+
+<section id="garantias" class="py-20 md:py-32 relative bg-canvas">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+      <span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold tracking-wide bg-ficus-50 border border-ficus-200 text-ficus-800">
+        {faqEntry.data.badge}
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+        {faqEntry.data.title}
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+        {faqEntry.data.subtitle}
+      </p>
+    </div>
+
+    <!-- 3 Core Guarantees -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+      {guarantees.map((item) => (
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-2xs flex flex-col justify-between hover:border-ficus-500/70 transition-all">
+          <div class="space-y-4">
+            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-ficus-100/70 text-ficus-800">
+              {item.tag}
+            </span>
+            <h3 class="text-lg font-bold text-slate-900">{item.category}</h3>
+            
+            <div class="space-y-2 text-xs sm:text-sm">
+              <div class="text-rose-700 font-medium">
+                <span class="font-bold">El temor habitual:</span> {item.doubt}
+              </div>
+              <div class="text-slate-700 font-normal pt-2 border-t border-slate-200">
+                <span class="font-bold text-ficus-800">Nuestra respuesta:</span> {item.solution}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Accordion FAQ for Search Engines and Decision Makers -->
+    <div class="max-w-4xl mx-auto space-y-4">
+      <h3 class="text-2xl font-bold text-slate-900 text-center mb-8">
+        Preguntas Frecuentes sobre la Implementación de Ficus
+      </h3>
+
+      <div class="space-y-3">
+        {faqs.map((faq, index) => (
+          <details class="group rounded-2xl bg-slate-50/70 border border-slate-200 p-6 transition-all [&_summary::-webkit-details-marker]:hidden open:bg-white open:shadow-sm">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 font-semibold text-slate-900 group-hover:text-ficus-700">
+              <span class="text-base sm:text-lg">{faq.q}</span>
+              <span class="transition group-open:rotate-180 shrink-0 text-ficus-700">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed pt-3 border-t border-slate-200/80">
+              {faq.a}
+            </p>
+          </details>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>

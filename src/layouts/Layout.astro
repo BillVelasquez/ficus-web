@@ -1,0 +1,159 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title = "Ficus | Software ERP y Gestión Empresarial Personalizable",
+  description = "ERP ágil y personalizable que combina módulos preconstruidos (contabilidad NIIF, facturación y nómina electrónica DIAN, inventario PEPS) con adaptación total y conector oficial para Microsoft Excel.",
+  image = "/img/logo.png",
+  canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://gficus.co").href,
+} = Astro.props;
+
+const siteUrl = Astro.site?.href.replace(/\/$/, '') || 'https://gficus.co';
+const fullImageUrl = new URL(image, siteUrl).href;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${siteUrl}/#software`,
+      "name": "Ficus ERP",
+      "alternateName": "Sistema de Gestión Empresarial Ficus",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All (Web Cloud, Windows, macOS, Excel Integration)",
+      "description": description,
+      "url": siteUrl,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "COP",
+        "description": "Prueba de concepto con datos reales sin costo y suscripción mensual flexible"
+      },
+      "featureList": [
+        "Contabilidad Multidimensión e Informes NIIF",
+        "Facturación Electrónica DIAN Ilimitada",
+        "Cuentas por Cobrar, Estados de Cuenta y RADIAN",
+        "Portal de Autoservicio para Proveedores y Clientes",
+        "Documento Soporte Electrónico DIAN",
+        "Inventario Multibodega y Costeo PEPS",
+        "Nómina Electrónica Integrada",
+        "Complemento Oficial para Microsoft Excel",
+        "Diseñador de Flujos de Negocio (BPM) y Modelos de Datos",
+        "BUS de Integración Empresarial (APIs, Webhooks, Colas)"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      "name": "Ficus",
+      "url": siteUrl,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteUrl}/img/logo.png`,
+        "caption": "Ficus Logo"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "availableLanguage": ["Spanish"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "Ficus",
+      "publisher": { "@id": `${siteUrl}/#organization` }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Tiene costo inicial la implementación de Ficus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. En Ficus ofrecemos un período de prueba de concepto sin costo con datos reales de su negocio. La contratación opera bajo suscripción mensual fija sin tarifas abusivas de licenciamiento previo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se evita el traumatismo durante el cambio de software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aplicamos la metodología Strangler Fig con operación en paralelo. Su sistema actual sigue funcionando mientras Ficus se sincroniza de forma transparente. El negocio nunca se detiene."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Mis empleados pueden seguir usando Excel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Ficus cuenta con un complemento nativo para Microsoft Excel que permite consultar saldos, formular reportes dinámicos e importar datos masivos conectados directamente a una base de datos centralizada y segura."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Ficus incluye facturación y nómina electrónica directa a la DIAN?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Ficus transmite directamente a la DIAN Facturación Electrónica, Nómina Electrónica, Documento Soporte y Eventos RADIAN de forma ilimitada y sin intermediarios de cobro por documento."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/img/fi_logo.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="keywords" content="Software ERP Colombia, Facturación Electrónica DIAN, Nómina Electrónica, RADIAN, Contabilidad NIIF, ERP personalizable, Software a la medida, Integración Excel ERP, Migración Strangler Fig, Inventario PEPS" />
+    <meta name="author" content="Ficus" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Ficus ERP" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImageUrl} />
+    <meta property="og:image:alt" content="Ficus - Software ERP y Gestión Empresarial" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullImageUrl} />
+
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+  <body class="bg-canvas text-slate-800 font-sans antialiased selection:bg-ficus-200 selection:text-ficus-950 min-h-screen flex flex-col">
+    <slot />
+  </body>
+</html>

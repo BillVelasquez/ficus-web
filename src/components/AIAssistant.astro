@@ -1,0 +1,142 @@
+---
+import { getEntry } from 'astro:content';
+
+const aiEntry = await getEntry('sections', '05-ai-assistant');
+---
+
+<section id="ia-core" class="py-20 md:py-28 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Minimalist Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-3 mb-14">
+      <span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold tracking-wide bg-ficus-100/70 border border-ficus-200 text-ficus-800">
+        {aiEntry.data.badge}
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+        Información de su Negocio en <span class="text-ficus-700">Tiempo Real</span> con Inteligencia Artificial
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+        {aiEntry.data.subtitle}
+      </p>
+    </div>
+
+    <!-- Main Card in Clean Minimalist Canvas Style -->
+    <div class="rounded-3xl bg-white border border-slate-200/90 p-8 sm:p-12 shadow-sm space-y-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left: Value Points -->
+        <div class="lg:col-span-6 space-y-6">
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
+            Tome decisiones al instante sin esperar reportes manuales
+          </h3>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Ficus AI se conecta directamente a la base de datos de su empresa a través de un protocolo transaccional seguro. La inteligencia artificial no imagina datos: interpreta su operación viva en tiempo real respetando permisos y normatividad.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-ficus-100 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-ficus-700" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-700">
+                <strong class="font-semibold text-slate-900">Consultas en lenguaje cotidiano:</strong> Pregunte sobre ventas, cartera o existencias sin redactar código ni fórmulas complejas.
+              </p>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-ficus-100 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-ficus-700" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-700">
+                <strong class="font-semibold text-slate-900">Cero alucinaciones:</strong> Respuestas basadas estrictamente en los asientos contables y facturas reales del sistema.
+              </p>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-ficus-100 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-ficus-700" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-700">
+                <strong class="font-semibold text-slate-900">Seguridad multi-tenant:</strong> Aislamiento total de información sensible por empresa y usuario.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Light & Clean Chat Demonstration -->
+        <div class="lg:col-span-6">
+          <div class="rounded-2xl bg-canvas border border-slate-200 p-6 space-y-4 shadow-2xs">
+            
+            <!-- Window Bar -->
+            <div class="flex items-center justify-between pb-3 border-b border-slate-200/80 text-xs font-medium text-slate-500">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-ficus-500"></span>
+                <span class="font-semibold text-slate-700">Asistente Ficus AI • En Línea</span>
+              </div>
+              <span class="text-[11px] font-mono text-ficus-800 bg-ficus-100 px-2 py-0.5 rounded">
+                Datos en vivo
+              </span>
+            </div>
+
+            <!-- Dialogue Stream -->
+            <div class="space-y-3.5 text-xs sm:text-sm">
+              
+              <!-- User Bubble -->
+              <div class="flex items-start gap-2.5 justify-end">
+                <div class="p-3.5 rounded-2xl rounded-tr-none bg-slate-200/80 text-slate-800 max-w-[85%] font-medium">
+                  ¿Cuál fue el margen de ventas de la sucursal Medellín hoy y qué facturas vencen esta semana?
+                </div>
+              </div>
+
+              <!-- AI Response Bubble -->
+              <div class="flex items-start gap-2.5">
+                <div class="w-7 h-7 rounded-full bg-ficus-700 text-white flex items-center justify-center font-bold text-xs shrink-0">
+                  F
+                </div>
+                <div class="p-4 rounded-2xl rounded-tl-none bg-white border border-slate-200 text-slate-700 max-w-[90%] space-y-2.5 shadow-2xs">
+                  <p class="text-slate-800">
+                    Revisando transacciones de hoy en la <strong>Sucursal Medellín</strong>:
+                  </p>
+                  
+                  <div class="grid grid-cols-2 gap-2 p-2.5 rounded-xl bg-ficus-50/70 border border-ficus-100">
+                    <div>
+                      <div class="text-[10px] uppercase font-semibold text-slate-500">Ventas Hoy</div>
+                      <div class="text-base font-bold text-ficus-800">\$24,850,000</div>
+                    </div>
+                    <div>
+                      <div class="text-[10px] uppercase font-semibold text-slate-500">Margen Real</div>
+                      <div class="text-base font-bold text-slate-900">36.4% <span class="text-[10px] text-ficus-700 font-medium">(+3.2%)</span></div>
+                    </div>
+                  </div>
+
+                  <p class="text-xs text-slate-600">
+                    📅 <strong>Vencimientos Cartera:</strong> Existen 4 facturas por cobrar por \$18,320,000 con acuse de recibo en RADIAN.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Example query prompts -->
+            <div class="pt-3 border-t border-slate-200/80">
+              <div class="text-[11px] text-slate-500 mb-1.5 font-medium">Ejemplos de preguntas gerenciales:</div>
+              <div class="flex flex-wrap gap-2 text-[11px]">
+                <span class="px-2.5 py-1 rounded-full bg-white text-slate-600 border border-slate-200">
+                  "¿Kárdex con existencias menores al stock mínimo?"
+                </span>
+                <span class="px-2.5 py-1 rounded-full bg-white text-slate-600 border border-slate-200">
+                  "Resumen de nómina liquidada este mes"
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

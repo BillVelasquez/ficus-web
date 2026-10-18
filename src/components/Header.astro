@@ -1,0 +1,110 @@
+---
+// Header.astro
+---
+
+<!-- Top Brand Accent Line -->
+<div class="h-1 w-full bg-gradient-to-r from-ficus-800 via-ficus-600 to-emerald-400"></div>
+
+<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-canvas/90 border-b border-slate-200/80 transition-all">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-3 group" aria-label="Ficus ERP - Inicio">
+        <img 
+          src="/img/fi_logo.png" 
+          alt="Logotipo de Ficus ERP" 
+          class="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+          width="40"
+          height="40"
+          loading="eager"
+        />
+        <div class="flex flex-col">
+          <span class="text-2xl font-extrabold tracking-tight text-slate-900 group-hover:text-ficus-700 transition-colors">
+            FICUS
+          </span>
+          <span class="text-[10px] tracking-widest uppercase font-bold text-ficus-700 -mt-1">
+            Gestión Empresarial
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600" aria-label="Navegación principal">
+        <a href="#beneficios" class="hover:text-ficus-700 transition-colors">Beneficios</a>
+        <a href="#modulos" class="hover:text-ficus-700 transition-colors">Módulos</a>
+        <a href="#ia-core" class="flex items-center gap-1.5 text-ficus-800 font-semibold bg-ficus-50 hover:bg-ficus-100 border border-ficus-200/80 px-2.5 py-1 rounded-full transition-colors">
+          <span class="w-1.5 h-1.5 rounded-full bg-ficus-600 animate-pulse"></span>
+          <span>IA en Tiempo Real</span>
+        </a>
+        <a href="#personalizacion" class="hover:text-ficus-700 transition-colors">Personalización</a>
+        <a href="#garantias" class="hover:text-ficus-700 transition-colors">Garantías</a>
+        <a href="#soporte" class="hover:text-ficus-700 transition-colors">Acompañamiento</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="hidden md:flex items-center gap-4">
+        <a 
+          href="#contacto" 
+          style="background-color: #1e622f; color: #ffffff;"
+          class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-bold text-white bg-[#1e622f] hover:bg-[#164e28] transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+        >
+          <span style="color: #ffffff;">Solicitar Demo</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        type="button" 
+        id="mobile-menu-toggle"
+        class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-ficus-600"
+        aria-controls="mobile-menu" 
+        aria-expanded="false"
+        aria-label="Abrir menú de navegación"
+      >
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3 shadow-lg">
+    <a href="#beneficios" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-ficus-50 hover:text-ficus-700">Beneficios</a>
+    <a href="#modulos" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-ficus-50 hover:text-ficus-700">Módulos</a>
+    <a href="#ia-core" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold text-ficus-800 bg-ficus-50">✨ IA en Tiempo Real</a>
+    <a href="#personalizacion" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-ficus-50 hover:text-ficus-700">Personalización</a>
+    <a href="#garantias" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-ficus-50 hover:text-ficus-700">Garantías</a>
+    <a href="#soporte" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-ficus-50 hover:text-ficus-700">Acompañamiento</a>
+    <div class="pt-2">
+      <a 
+        href="#contacto" 
+        style="background-color: #1e622f; color: #ffffff;"
+        class="mobile-link block w-full text-center px-4 py-3 rounded-xl font-bold text-white bg-[#1e622f] hover:bg-[#164e28]"
+      >
+        <span style="color: #ffffff;">Solicitar Demostración Sin Costo</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  toggleBtn?.addEventListener('click', () => {
+    const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+    toggleBtn.setAttribute('aria-expanded', (!isExpanded).toString());
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      toggleBtn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

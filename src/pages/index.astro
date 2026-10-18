@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ValueProps from '../components/ValueProps.astro';
+import AIAssistant from '../components/AIAssistant.astro';
+import Dilemma from '../components/Dilemma.astro';
+import Modules from '../components/Modules.astro';
+import Customization from '../components/Customization.astro';
+import Support from '../components/Support.astro';
+import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Ficus | Software ERP y Gestión Empresarial Personalizable | IA y Excel"
+  description="El software ERP que se adapta a su empresa. Módulos completos de contabilidad NIIF, facturación y nómina electrónica DIAN, inventario PEPS, IA en tiempo real y conector bidireccional con Microsoft Excel."
+>
+  <Header />
+  <main id="main-content" class="flex-grow">
+    <Hero />
+    <ValueProps />
+    <AIAssistant />
+    <Dilemma />
+    <Modules />
+    <Customization />
+    <Support />
+    <FAQ />
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
